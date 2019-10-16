@@ -1,5 +1,6 @@
 variables:
   ZOLA_VERSION: v0.8.0
+  GIT_SUBMODULE_STRATEGY: recursive
 
 pages:
   image: centos:latest
