@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://themasch.gitlab.io/blog"
+base_url = "https://blog.masch.dev"
 title = "masch.dev"
 
 # Whether to automatically compile all Sass files in the sass directory
