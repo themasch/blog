@@ -1,0 +1,17 @@
+{% extends "even/templates/index.html" %}
+
+
+{% block content %}
+    {% for page in paginator.pages %}
+        <article class="post">
+            {{ post_macros::title(page=page) }}
+            <div class="post__summary">
+                {{ page.summary | safe }}
+            </div>
+            <div class="read-more">
+                <a href="{{ page.permalink }}">Read more...</a>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
+

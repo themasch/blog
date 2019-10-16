@@ -1,0 +1,28 @@
+{% extends "even/templates/index.html" %}
+
+{% block js %}{% endblock %}
+
+{% block content %}
+{% set section = get_section(path="blog/_index.md") %}
+<div class="posts">
+    {% for page in section.pages %}
+    <article class="post">
+        {{ post_macros::title(page=page) }}
+        <div class="post__summary">
+            {{ page.summary | safe }}
+        </div>
+        <div class="read-more">
+            <a href="{{ page.permalink }}">Read more...</a>
+        </div>
+    </article>
+    {% endfor %}
+</div>
+<nav class="pagination">
+    {% if section.previous %}
+    <a class="previous" href="{{ section.previous }}">‹ Previous</a>
+    {% endif %}
+    {% if section.next %}
+    <a class="next" href="{{ section.next }}">Next ›</a>
+    {% endif %}
+</nav>
+{% endblock content %}
